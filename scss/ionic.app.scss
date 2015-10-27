@@ -16,7 +16,9 @@ $dark:                            #444 !default;
 */
 
 //change positive to az-zahraa green
-$positive:                        #009900 !default;
+$positive: #009900 !default;
+$positive-dark: #009900 !default;
+//Changes android drawer color!
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
@@ -24,3 +26,15 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+@import "partials/android";
+@import "partials/ios";
+
+//remove all scrollbars for more native-like app feel
+.scroll-bar {
+  visibility: hidden !important;
+}
+
+//See if this helps w/ jankiness
+//[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+//  display: none !important;
+//}

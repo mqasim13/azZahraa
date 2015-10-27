@@ -1,0 +1,66 @@
+@import 'variables';
+
+drawer .item {
+  font-size: 15px;
+  font-family: $roboto-medium;
+  font-weight: 500;
+  border: none;
+
+  &.current > .item-content {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: $positive;
+
+    .icon {
+      color: $positive;
+    }
+  }
+
+  .icon {
+    display: inline-block;
+    color: #818181;
+    margin-right: 50px;
+    position: relative;
+
+    &::before {
+      width: 22px;
+      font-size: 22px;
+      text-align: center;
+      position: absolute;
+      bottom: -6px;
+    }
+  }
+}
+
+drawer.animate {
+  //transition: transform 0.2s linear;
+  //-webkit-transition: -webkit-transform 0.2s linear;
+
+  //default values?
+  //transition: transform 0.2s ease-in-out;
+  //-webkit-transition: -webkit-transform 0.2s ease-in-out;
+
+  //Crazy values (last version -> revert to this if we have issues?)
+  //transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  //-webkit-transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1.000);
+
+  //smooth but slow?
+  //-webkit-transition: all linear 200ms;
+  //transition: all linear 200ms;
+
+  -webkit-transition: 200ms all ease;
+  transition: 200ms all ease;
+  //-webkit-transition: 200ms all ease;
+  //transition: 200ms all ease;
+
+}
+
+.list {
+  padding-top: 0;
+}
+
+.drawer-header {
+  width: 100%;
+  height: 190px;
+  background: #2d5d9d;
+  margin-bottom: 10px;
+}

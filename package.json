@@ -2,6 +2,14 @@
   "name": "azzahraa",
   "version": "1.0.0",
   "description": "azZahraa: An app for Az-Zahraa Islamic Centre built in ionic",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mydewji/azZahraa"
+  },
+  "license": {
+    "type": "CC-BY-ND-4.0",
+    "url": "https://creativecommons.org/licenses/by-nd/4.0/"
+  },
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-concat": "^2.2.0",
@@ -11,6 +19,8 @@
   },
   "devDependencies": {
     "bower": "^1.3.3",
+    "gulp-angular-templatecache": "^1.7.0",
+    "gulp-minify-html": "^1.0.4",
     "gulp-util": "^2.2.14",
     "shelljs": "^0.3.0"
   },
@@ -27,9 +37,14 @@
     {
       "locator": "https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git",
       "id": "cordova-plugin-inappbrowser"
+    },
+    {
+      "locator": "https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git",
+      "id": "cordova-plugin-calendar"
     }
   ],
   "cordovaPlatforms": [
-    "android"
+    "android",
+    "ios"
   ]
 }

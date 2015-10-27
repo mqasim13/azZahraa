@@ -8,7 +8,8 @@ var rename = require('gulp-rename');
 var sh = require('shelljs');
 
 var paths = {
-  sass: ['./scss/**/*.scss']
+  sass: ['./scss/**/*.scss'],
+  templates: ['./www/templates/**/*.html']
 };
 
 gulp.task('default', ['sass']);
@@ -29,6 +30,7 @@ gulp.task('sass', function(done) {
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.templates, ['cache_templates']);
 });
 
 gulp.task('install', ['git-check'], function() {
@@ -49,4 +51,17 @@ gulp.task('git-check', function(done) {
     process.exit(1);
   }
   done();
+});
+
+var minifyHtml    = require('gulp-minify-html'),
+    templateCache = require('gulp-angular-templatecache');
+
+gulp.task('cache_templates', function() {
+  gulp.src('www/templates/**/*.html')
+      .pipe(minifyHtml({empty: true}))
+      .pipe(templateCache({
+        standalone: true,
+        root: 'templates'
+      }))
+      .pipe(gulp.dest('www/js'));
 });
